@@ -3,13 +3,14 @@ import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TaxRecordService } from '../../services/tax-record.service';
 import { TaxRecord } from '../../models/tax-record';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-tax-record-form',
   templateUrl: './tax-record-form.component.html',
   styleUrls: ['./tax-record-form.component.css'],
   standalone: true,
-  imports: [ReactiveFormsModule]
+  imports: [ReactiveFormsModule, CommonModule]
 })
 export class TaxRecordFormComponent implements OnInit {
   form: ReturnType<FormBuilder['group']>;

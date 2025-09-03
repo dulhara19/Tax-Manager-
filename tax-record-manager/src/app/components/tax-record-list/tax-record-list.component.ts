@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DecimalPipe } from '@angular/common';
+import { DecimalPipe, CommonModule } from '@angular/common';
 import { TaxRecord } from '../../models/tax-record';
 import { TaxRecordService } from '../../services/tax-record.service';
 
@@ -9,7 +9,7 @@ import { TaxRecordService } from '../../services/tax-record.service';
   templateUrl: './tax-record-list.component.html',
   styleUrls: ['./tax-record-list.component.css'],
   standalone: true,
-  imports: [DecimalPipe]
+  imports: [DecimalPipe, CommonModule]
 })
 export class TaxRecordListComponent implements OnInit {
   records: TaxRecord[] = [];
