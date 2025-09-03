@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>Tax Records</h2>
+  <button (click)="addNew()">+ Add New Record</button>
+
+  <div *ngIf="loading">Loading...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <table *ngIf="!loading && records.length > 0" class="records-table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Tax Year</th>
+        <th>Total Income</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of records">
+        <td><a (click)="edit(r)" class="clickable">{{ r.recordTitle }}</a></td>
+        <td>{{ r.taxYear }}</td>
+        <td>{{ totalIncome(r) | number:'1.2-2' }}</td>
+        <td>
+          <button (click)="edit(r)">Edit</button>
+          <button (click)="delete(r)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!loading && records.length === 0">No records yet.</div>
+</div>

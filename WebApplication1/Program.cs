@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using WebApplication.Data;
-using WebApplication1.Data;
 
 var builder = Microsoft.AspNetCore.Builder.WebApplication.CreateBuilder(args);
 

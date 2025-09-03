@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using WebApplication.Data;
 using WebApplication1.Models;
-using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {

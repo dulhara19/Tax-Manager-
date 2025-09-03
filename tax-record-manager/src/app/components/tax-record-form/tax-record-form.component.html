@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>{{ isEdit ? 'Edit' : 'Create' }} Tax Record</h2>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div>
+      <label>Title</label>
+      <input formControlName="recordTitle" />
+      <div *ngIf="form.controls.recordTitle.touched && form.controls.recordTitle.invalid" class="error">
+        Title is required.
+      </div>
+    </div>
+
+    <div>
+      <label>Tax Year</label>
+      <input type="number" formControlName="taxYear" />
+      <div *ngIf="form.controls.taxYear.touched && form.controls.taxYear.invalid" class="error">
+        Valid year is required.
+      </div>
+    </div>
+
+    <div>
+      <label>Income Amount</label>
+      <input type="number" formControlName="incomeAmount" step="0.01" />
+    </div>
+
+    <div>
+      <label>Deductions Amount</label>
+      <input type="number" formControlName="deductionsAmount" step="0.01" />
+    </div>
+
+    <div>
+      <label>Notes</label>
+      <textarea formControlName="notes"></textarea>
+    </div>
+
+    <div class="buttons">
+      <button type="submit" [disabled]="saving">{{ saving ? 'Saving...' : (isEdit ? 'Update' : 'Create') }}</button>
+      <button type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+</div>

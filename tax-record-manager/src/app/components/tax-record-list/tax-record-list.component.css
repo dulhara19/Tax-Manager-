@@ -1,0 +1,5 @@
+.container { padding: 16px; }
+.records-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+.records-table th, .records-table td { border: 1px solid #ddd; padding: 8px; }
+.clickable { cursor: pointer; color: #007bff; text-decoration: underline; }
+button { margin-right: 8px; }
